@@ -1,7 +1,10 @@
 create table `theatre_complex`(
 	`name` VARCHAR(50) NOT NULL,
-	`num_theatres` IN,
-	
+	`num_theatres` INT,
+	`city` VARCHAR(50),
+	`street` VARCHAR(50),
+	`postal_code` CHAR(6),
+	`phone_num` INT,
 	PRIMARY KEY(`name`));
 	
 create table `theatre`(
@@ -77,7 +80,6 @@ create table `reservation`(
 	
 create table `showing`(
 	`start_time` DATETIME NOT NULL,
-	`end_time` DATETIME NOT NULL,
 	`title` VARCHAR(50) NOT NULL,
 	`director` VARCHAR(50) NOT NULL,
 	`theatre_complex` VARCHAR(50) NOT NULL,
@@ -109,8 +111,8 @@ create table `review`(
 
 		
 insert into theatre_complex values
-("Cineplex", 4),
-("Starlight Theatres", 3)
+("Cineplex", 4, "Toronto", "Adelaide Street", "L3X7H9"),
+("Starlight Theatres", 3, "Kingston", "Princess Street", "K7M3H8")
 ;
 
 insert into theatre values
@@ -156,6 +158,11 @@ insert into supplier values
 
 insert into customer values
 ("1234567898765432","0622", 33333333)
+;
+
+insert into showing values
+(2018-04-02 12:45:00, "Avengers: Infinity War", "Joss Whedon", "Cineplex", 1),
+(2018-04-02 15:45:00, "Avengers: Infinity War", "Joss Whedon", "Cineplex", 2)
 ;
 	
 	
